@@ -29,6 +29,7 @@ namespace MathQuiz
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.timeLabel = new System.Windows.Forms.Label();
             this.timeLeftLabel = new System.Windows.Forms.Label();
             this.plusLeftLabel = new System.Windows.Forms.Label();
@@ -52,6 +53,7 @@ namespace MathQuiz
             this.timesRightLabel = new System.Windows.Forms.Label();
             this.timesLeftLabel = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.sum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.difference)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quotient)).BeginInit();
@@ -76,7 +78,6 @@ namespace MathQuiz
             this.timeLeftLabel.Size = new System.Drawing.Size(101, 25);
             this.timeLeftLabel.TabIndex = 1;
             this.timeLeftLabel.Text = "Time Left";
-            this.timeLeftLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // plusLeftLabel
             // 
@@ -239,7 +240,6 @@ namespace MathQuiz
             this.label11.TabIndex = 20;
             this.label11.Text = "×";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -282,6 +282,11 @@ namespace MathQuiz
             this.startButton.Text = "Start the quiz";
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MathQuiz
             // 
@@ -349,6 +354,7 @@ namespace MathQuiz
         private System.Windows.Forms.Label timesRightLabel;
         private System.Windows.Forms.Label timesLeftLabel;
         private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
